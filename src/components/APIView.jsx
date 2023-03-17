@@ -1,9 +1,7 @@
-import react from 'react'
-
-const APIView = () => {
+const APIView = (pokemon) => {
     return (
         <div>
-            Test
+            <img width="250px" rc="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png"/>
         </div>
     )
 }
