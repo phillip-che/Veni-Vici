@@ -15,11 +15,6 @@ const MainPanel = () => {
     const callAPI = async (query) => {
       await axios.get(query).then((response) => {
         setPokemon(response.data);
-        // console.log(pokemon.id);
-        // console.log(pokemon.name);
-        // console.log(pokemon.types[0].type.name);
-        // console.log(pokemon.height);
-        // console.log(pokemon.weight);
       });
     }
   

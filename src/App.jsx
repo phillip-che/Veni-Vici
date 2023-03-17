@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import MainPanel from './components/MainPanel'
-import AttributeFilter from './components/AttributeFilter';
+import BanList from './components/BanList';
 
 function App() {
   
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <MainPanel />
       <br></br>
-      <AttributeFilter />
+      <BanList />
     </div>
   )
 }
