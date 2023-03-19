@@ -10,15 +10,12 @@ const APIView = ({pokemon, attributes, onAttributeClick}) => {
           <h2> {capitalizeFirstLetter(pokemon.name)} </h2>
           <li>
             <button className="attribute" onClick={onAttributeClick}>
-              {" "}
-              {capitalizeFirstLetter(attributes.type)}{" "}
+              {attributes.type}
             </button>
             <button className="attribute" onClick={onAttributeClick}>
-              {" "}
               {attributes.height} in
             </button>
             <button className="attribute" onClick={onAttributeClick}>
-              {" "}
               {attributes.weight} lbs
             </button>
           </li>
