@@ -1,28 +1,37 @@
-const APIView = (pokemon) => {
+const APIView = ({pokemon, attributes, onAttributeClick}) => {
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
-    return (
+  return (
+    <div>
+      {pokemon != null ? (
         <div>
-            {pokemon.pokemon != null ? 
-                (
-                    <div>
-                        <h2> {capitalizeFirstLetter(pokemon.pokemon.name)} </h2>
-                        <li>
-                            <button className="attribute"> {capitalizeFirstLetter(pokemon.attributes.type)} </button>
-                            <button className="attribute"> {pokemon.attributes.height} in</button>
-                            <button className="attribute"> {pokemon.attributes.weight} lbs</button>
-                        </li>
-                        <img className="pokemon-img" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.pokemon.id}.png`}/>
-                    </div>
-                ) : (
-                    <div> </div>
-                )   
-            }
+          <h2> {capitalizeFirstLetter(pokemon.name)} </h2>
+          <li>
+            <button className="attribute" onClick={onAttributeClick}>
+              {" "}
+              {capitalizeFirstLetter(attributes.type)}{" "}
+            </button>
+            <button className="attribute" onClick={onAttributeClick}>
+              {" "}
+              {attributes.height} in
+            </button>
+            <button className="attribute" onClick={onAttributeClick}>
+              {" "}
+              {attributes.weight} lbs
+            </button>
+          </li>
+          <img
+            className="pokemon-img"
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
+          />
         </div>
-    )
-}
+      ) : (
+        <div> </div>
+      )}
+    </div>
+  );
+};
 
-export default APIView
+export default APIView;
