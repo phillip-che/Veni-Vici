@@ -8,8 +8,6 @@ function App() {
   return (
     <div className="App">
       <MainPanel />
-      <br></br>
-      <BanList />
     </div>
   )
 }
